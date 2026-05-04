@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaurav Govind — GRC & Information Security</title>
+  <meta name="description" content="Gaurav Govind — GRC, Risk, and Information Security professional based in Sydney. ISO 27001 Lead Auditor with experience across APRA CPS 234, CPS 230, NIST CSF, and ACSC Essential Eight." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #f6f5f2;
+      --bg-elev: #ffffff;
+      --ink: #1a1a1a;
+      --ink-soft: #4a4a4a;
+      --ink-faint: #8a8a8a;
+      --rule: #d8d6cf;
+      --accent: #1a3d2e;
+      --accent-soft: #e8eee9;
+      --serif: 'Fraunces', 'Times New Roman', serif;
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'JetBrains Mono', 'Courier New', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: 'ss01', 'ss02';
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── NAV ────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(246, 245, 242, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+      z-index: 100;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    nav .mark {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    nav .links { display: flex; gap: 32px; }
+    nav a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    nav a:hover { color: var(--ink); }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -4px;
+      height: 1px;
+      background: var(--ink);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    /* ── HERO ───────────────────────────────────────── */
+    header.hero {
+      padding: 120px 0 96px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--ink-faint);
+    }
+    h1.name {
+      font-family: var(--serif);
+      font-size: clamp(48px, 8vw, 88px);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+      font-variation-settings: 'opsz' 144;
+    }
+    h1.name em {
+      font-style: italic;
+      font-weight: 400;
+    }
+    .tagline {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 300;
+      color: var(--ink-soft);
+      max-width: 620px;
+      line-height: 1.4;
+      font-style: italic;
+    }
+    .meta {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 40px;
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--ink-faint);
+    }
+    .meta span { display: flex; align-items: center; gap: 8px; }
+    .meta .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    /* ── SECTIONS ───────────────────────────────────── */
+    section { padding: 96px 0; border-bottom: 1px solid var(--rule); }
+    .section-head {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+      align-items: baseline;
+    }
+    .section-num {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+    }
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    /* ── ABOUT ──────────────────────────────────────── */
+    .about-body {
+      grid-column: 2;
+      max-width: 640px;
+    }
+    .about-body p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+    }
+    .about-body p:first-child::first-letter {
+      font-family: var(--serif);
+      font-size: 64px;
+      font-weight: 400;
+      float: left;
+      line-height: 0.85;
+      margin: 8px 12px 0 0;
+      color: var(--ink);
+    }
+    .frameworks {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      padding: 6px 12px;
+      border: 1px solid var(--rule);
+      border-radius: 100px;
+      color: var(--ink-soft);
+      background: var(--bg-elev);
+      transition: all 0.2s ease;
+    }
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── PROJECTS ───────────────────────────────────── */
+    .project {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 48px;
+      padding: 48px 0;
+      border-top: 1px solid var(--rule);
+      transition: background 0.3s ease;
+      margin: 0 -32px;
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    .project:hover { background: var(--bg-elev); }
+    .project:first-of-type { border-top: none; padding-top: 0; }
+    .project:first-of-type:hover { padding-top: 24px; margin-top: -24px; }
+
+    .project-index {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--ink-faint);
+      letter-spacing: 0.12em;
+    }
+    .project-title {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+    .project-sub {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      color: var(--ink-faint);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .project ul {
+      list-style: none;
+      padding: 0;
+    }
+    .project ul li {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .project ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--ink-faint);
+    }
+    .project-tags {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .project-tags .tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    /* ── CONTACT ────────────────────────────────────── */
+    footer {
+      padding: 96px 0 64px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 48px;
+      align-items: baseline;
+    }
+    .contact-body { max-width: 640px; }
+    .contact-body h2 { margin-bottom: 32px; }
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-list a, .contact-list span {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 400;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      width: fit-content;
+    }
+    .contact-list .label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+      min-width: 80px;
+    }
+    .contact-list a:hover {
+      color: var(--accent);
+    }
+    .contact-list a:hover .arrow { transform: translateX(4px); }
+    .arrow {
+      display: inline-block;
+      transition: transform 0.2s ease;
+      font-family: var(--mono);
+      font-size: 16px;
+    }
+    .footer-bottom {
+      margin-top: 96px;
+      padding-top: 32px;
+      border-top: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 720px) {
+      .container { padding: 0 24px; }
+      nav .links { gap: 20px; }
+      header.hero { padding: 80px 0 64px; }
+      section { padding: 64px 0; }
+      .section-head, .project, .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .about-body { grid-column: 1; }
+      .project { padding: 32px 0; margin: 0; }
+      .project-index { display: none; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+    }
+
+    /* ── REVEAL ANIMATION ───────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <div class="mark">GG</div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow reveal">Sydney · Information Security</div>
+      <h1 class="name reveal">Gaurav <em>Govind</em></h1>
+      <p class="tagline reveal">GRC analyst translating regulatory complexity into clear, audit-ready outcomes for technical and Board audiences.</p>
+      <div class="meta reveal">
+        <span><span class="dot"></span>Available for opportunities</span>
+        <span>ISO 27001 Lead Auditor</span>
+        <span>APRA CPS 234 / 230</span>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-num">01 / About</div>
+        <h2>A practitioner of risk, evidence, and quiet rigour.</h2>
+      </div>
+      <div class="about-body">
+        <p>Master's graduate in Information Systems Management from Macquarie University with hands-on experience in GRC, compliance gap analysis, third-party risk assessment, and audit-ready documentation.</p>
+        <p>ISO 27001 Lead Auditor with practical exposure to APRA CPS 234, CPS 230, ISO 27001, NIST CSF, and ACSC Essential Eight. I translate regulatory requirements into actionable provisions, configuration actions, and Board-ready findings — work that lands cleanly with engineers and executives alike.</p>
+        <div class="frameworks">
+          <span class="chip">ISO 27001</span>
+          <span class="chip">APRA CPS 234</span>
+          <span class="chip">APRA CPS 230</span>
+          <span class="chip">NIST CSF</span>
+          <span class="chip">ACSC Essential Eight</span>
+          <span class="chip">ISO 31000</span>
+          <span class="chip">CSA CAIQ v4</span>
+          <span class="chip">Privacy Act 1988</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-num">02 / Projects</div>
+        <h2>Selected work.</h2>
+      </div>
+
+      <article class="project">
+        <div class="project-index">№ 01</div>
+        <div>
+          <h3 class="project-title">Third-Party Risk Assessment — Atlassian Cloud</h3>
+          <div class="project-sub">Simulated APRA Engagement · Private Health Insurer</div>
+          <ul>
+            <li>Conducted independent TPRM assessment of Atlassian Cloud (Jira, Confluence, JSM); produced 7 audit-grade artefacts including engagement charter, evidence log, control-assessment workbook, regulatory overlay, findings register, executive summary, and risk scorecard.</li>
+            <li>Built a 6-sheet CAIQ v4 control assessment workbook covering 54 prioritised controls across 12 domains, with a formula-driven dashboard mapping evidence reliability (A/B/C), control status, and risk ratings.</li>
+            <li>Produced paragraph-level regulatory overlay mapping CPS 234, CPS 230, and Australian Privacy Principles to specific vendor controls and gaps — generating 12 contractual provisions for procurement negotiation.</li>
+            <li>Identified 16 findings with inherent and residual risk ratings; 7 inherent High findings reduced to 0 residual High after recommended treatments. Delivered 2-page Executive Summary and 1-page Risk Scorecard for CISO and Risk Committee audiences.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">CSA CAIQ v4</span>
+            <span class="tag">CPS 234</span>
+            <span class="tag">CPS 230</span>
+            <span class="tag">Privacy Act 1988</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-index">№ 02</div>
+        <div>
+          <h3 class="project-title">APRA CPS 234 Compliance Gap Assessment</h3>
+          <div class="project-sub">Simulated Superannuation Fund</div>
+          <ul>
+            <li>Conducted independent CPS 234 gap assessment across 29 controls and 6 control domains via evidence review and stakeholder interviews; identified 11 non-compliant and 14 partial controls.</li>
+            <li>Escalated 3 critical findings to simulated Board: absent APRA notification procedure, untested incident response plan, and missing annual CPS 234 self-assessment.</li>
+            <li>Built a 6-sheet Excel assessment tool with auto-calculated RAG scoring, evidence log, and compliance dashboard aligned to CPS 234 requirements.</li>
+            <li>Delivered Board-ready executive summary and 30/90/180-day remediation roadmap applying APRA CPS 234, ISO 31000, and evidence-based control assessment methodology.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">CPS 234</span>
+            <span class="tag">ISO 31000</span>
+            <span class="tag">Gap Assessment</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-index">№ 03</div>
+        <div>
+          <h3 class="project-title">ISO 27001 ISMS Implementation</h3>
+          <div class="project-sub">Simulated Healthcare Client</div>
+          <ul>
+            <li>Built a complete ISMS from scratch — developed scope, Statement of Applicability, risk register, risk treatment plan, information asset register, and all core security policies required for certification readiness.</li>
+            <li>Performed structured likelihood/impact risk assessments and control gap analysis; prioritised remediation through targeted treatments to reduce residual risk.</li>
+            <li>Conducted end-to-end maturity assessment using the NIST CSF framework, producing a prioritised uplift roadmap with clear control ownership via RACI.</li>
+            <li>Completed a structured third-party risk assessment, reviewed supplier security questionnaires, rated identified risks, and produced risk-based recommendations.</li>
+          </ul>
+          <div class="project-tags">
+            <span class="tag">ISO 27001</span>
+            <span class="tag">ISO 31000</span>
+            <span class="tag">NIST CSF</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="section-num">03 / Contact</div>
+        <div class="contact-body">
+          <h2>Let's talk.</h2>
+          <div class="contact-list">
+            <a href="https://www.linkedin.com/in/gauravgovind99/" target="_blank" rel="noopener">
+              <span class="label">LinkedIn</span>
+              gauravgovind99 <span class="arrow">→</span>
+            </a>
+            <a href="tel:+61414286567">
+              <span class="label">Phone</span>
+              +61 414 286 567 <span class="arrow">→</span>
+            </a>
+            <span>
+              <span class="label">Based in</span>
+              Sydney, NSW
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Gaurav Govind</span>
+        <span>Built with care · Sydney</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Subtle reveal on load
+    document.addEventListener('DOMContentLoaded', () => {
+      const items = document.querySelectorAll('.reveal');
+      items.forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), 80 * i);
+      });
+    });
+  </script>
+
+</body>
+</html>
